@@ -1,13 +1,109 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(243, 243, 243);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main-container {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+.form {
+  margin-top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  color: blue;
+  font-size: large;
+}
+
+.label {
+  width: 25%;
+  border: 1px solid blue;
+  border-radius: 20px;
+  background-color: rgb(236, 241, 253);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.input {
+  width: 80%;
+  height: 100%;
+  padding: 8px 15px 8px 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(236, 241, 253);
+  outline: none;
+}
+
+.check_btn {
+  background-color: rgb(236, 241, 253);
+  border: none;
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+}
+
+.password_check {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: rgb(122, 120, 120);
+}
+
+.focused_green {
+  border: 1px solid rgb(12, 215, 110);
+}
+
+.focused_yellow {
+  border: 1px solid rgb(208, 215, 12);
+}
+
+.focused_red {
+  border: 1px solid rgb(215, 12, 12);
+}
+
+.red-focus {
+  background-color: rgb(252, 228, 228);
+}
+
+.yellow-focus {
+  background-color: rgb(243, 243, 213);
+}
+
+.green-focus {
+  background-color: rgb(215, 246, 230);
+}
+
+.gray {
+  color: rgb(122, 120, 120);
+}
+
+.red {
+  color: rgb(249, 8, 8);
+}
+
+.yellow {
+  color: rgb(219, 219, 50);
+}
+
+.green {
+  color: rgb(39, 181, 39);
 }
