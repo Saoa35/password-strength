@@ -47,15 +47,16 @@ export const PasswordForm = () => {
     );
   };
 
-  const labelColor = () => {
-    return redField
+  const labelColor = () =>
+    redField
       ? "label red-focus focused_red"
       : yellowField
       ? "label yellow-focus focused_yellow"
       : greenField
       ? "label green-focus focused_green"
       : "label";
-  };
+
+  const inputType = () => (showPassword ? "text" : "password");
 
   return (
     <form className="form">
@@ -64,7 +65,7 @@ export const PasswordForm = () => {
       <label htmlFor="password" className={labelColor()}>
         <input
           className="input"
-          type={showPassword ? "text" : "password"}
+          type={inputType()}
           id="password"
           value={password}
           onChange={handlePaChange}
