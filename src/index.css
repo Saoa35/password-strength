@@ -49,12 +49,12 @@ body {
   padding: 8px 15px 8px 10px;
   border: none;
   border-radius: 20px;
-  background-color: rgb(236, 241, 253);
+  background-color: inherit;
   outline: none;
 }
 
 .check_btn {
-  background-color: rgb(236, 241, 253);
+  background-color: inherit;
   border: none;
   cursor: pointer;
   width: 26px;
