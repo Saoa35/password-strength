@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { passwordStrengthChecking } from "../utils/services";
 
 export const PasswordForm = () => {
   const [password, setPassword] = useState("");
@@ -38,57 +39,12 @@ export const PasswordForm = () => {
   const handlePaChange = (e) => {
     setPassword(e.target.value);
 
-    const letterRegex = /[a-zA-Z]/;
-    const digitRegex = /[0-9]/;
-    const symbolRegex = /[!@#$%^&*(),.?":{}|<>£]/;
-
-    const passwordCheck = document.querySelector(".password_check");
-    const easyParagraph = passwordCheck.querySelector(".easy");
-    const mediumParagraph = passwordCheck.querySelector(".medium");
-    const strongParagraph = passwordCheck.querySelector(".strong");
-
-    if (e.target.value === "") {
-      easyParagraph.className = "easy gray";
-      mediumParagraph.className = "medium gray";
-      strongParagraph.className = "strong gray";
-      handleBlure();
-    } else if (e.target.value.length < 8) {
-      easyParagraph.className = "easy red";
-      mediumParagraph.className = "medium red";
-      strongParagraph.className = "strong red";
-      setRedField(true);
-      setGreenField(false);
-      setYellowField(false);
-    } else if (
-      letterRegex.test(e.target.value) &&
-      digitRegex.test(e.target.value) &&
-      symbolRegex.test(e.target.value)
-    ) {
-      easyParagraph.className = "easy green";
-      mediumParagraph.className = "medium green";
-      strongParagraph.className = "strong green";
-      setGreenField(true);
-      setYellowField(false);
-      setRedField(false);
-    } else if (
-      (letterRegex.test(e.target.value) && symbolRegex.test(e.target.value)) ||
-      (letterRegex.test(e.target.value) && digitRegex.test(e.target.value)) ||
-      (digitRegex.test(e.target.value) && symbolRegex.test(e.target.value))
-    ) {
-      easyParagraph.className = "easy yellow";
-      mediumParagraph.className = "medium yellow";
-      strongParagraph.className = "strong gray";
-      setYellowField(true);
-      setRedField(false);
-      setGreenField(false);
-    } else {
-      easyParagraph.className = "easy red";
-      mediumParagraph.className = "medium gray";
-      strongParagraph.className = "strong gray";
-      setRedField(true);
-      setGreenField(false);
-      setYellowField(false);
-    }
+    passwordStrengthChecking(
+      e.target.value,
+      setRedField,
+      setGreenField,
+      setYellowField
+    );
   };
 
   const labelColor = () => {
